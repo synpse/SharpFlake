@@ -4,7 +4,7 @@ using Snowspeck.Metadata;
 
 namespace Snowspeck.Services;
 
-public class UnsignedSnowflakeService : SnowflakeServiceBase<ulong>
+public sealed class UnsignedSnowflakeService : SnowflakeServiceBase<ulong>
 {
     public UnsignedSnowflakeService(IOptions<SnowflakeOptions> options)
         : base(options.Value) { }

@@ -1,4 +1,6 @@
 // Copyright (c) 2025 Tiago Ferreira Alves. Licensed under the MIT License.
+
+using System.Runtime.CompilerServices;
 using Snowspeck.Interfaces;
 using Snowspeck.Metadata;
 
@@ -22,9 +24,9 @@ public abstract class SnowflakeServiceBase<TId> : ISnowflakeGenerator<TId>
 
         _epoch = options.Epoch;
         _workerId = options.WorkerId;
-        _maxSequence = ~(-1L << 12); // SequenceBits
+        _maxSequence = ~(-1L << 12);
 
-        long maxWorkerId = ~(-1L << 10); // WorkerIdBits
+        long maxWorkerId = ~(-1L << 10);
         if (_workerId < 0 || _workerId > maxWorkerId)
             throw new ArgumentException($"Worker id must be between 0 and {maxWorkerId}");
     }
@@ -65,15 +67,19 @@ public abstract class SnowflakeServiceBase<TId> : ISnowflakeGenerator<TId>
     protected abstract TId ComposeId(long timestamp, long workerId, long sequence);
     protected abstract SnowflakeMetadata ParseId(TId id, long epoch);
 
-    private long GetCurrentTimestamp() => DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static long GetCurrentTimestamp() => DateTime.UtcNow.Ticks / TimeSpan.TicksPerMillisecond;
 
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     private long WaitForNextMillis(long current)
     {
-        long timestamp = GetCurrentTimestamp();
-        while (timestamp <= current)
+        long ts;
+        var spinner = new SpinWait();
+        do
         {
-            timestamp = GetCurrentTimestamp();
-        }
-        return timestamp;
+            ts = GetCurrentTimestamp();
+            if (ts <= current) spinner.SpinOnce();
+        } while (ts <= current);
+        return ts;
     }
 }

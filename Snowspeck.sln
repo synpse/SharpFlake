@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snowspeck", "Snowspeck\Snow
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snowspeck.Tests", "Snowspeck.Tests\Snowspeck.Tests.csproj", "{18A53E6A-F65F-4A17-B9E4-B652283A0403}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snowspeck.Benchmarks", "Snowspeck.Benchmarks\Snowspeck.Benchmarks.csproj", "{7DC9CB8C-6EA4-4A7A-82EB-1F7C6C36B629}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,5 +21,9 @@ Global
 		{18A53E6A-F65F-4A17-B9E4-B652283A0403}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18A53E6A-F65F-4A17-B9E4-B652283A0403}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18A53E6A-F65F-4A17-B9E4-B652283A0403}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DC9CB8C-6EA4-4A7A-82EB-1F7C6C36B629}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DC9CB8C-6EA4-4A7A-82EB-1F7C6C36B629}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DC9CB8C-6EA4-4A7A-82EB-1F7C6C36B629}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DC9CB8C-6EA4-4A7A-82EB-1F7C6C36B629}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
