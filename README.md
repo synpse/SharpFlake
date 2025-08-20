@@ -1,5 +1,5 @@
 # Snowspeck
-**A lightweight, thread-safe, and decodable Snowflake ID generator for .NET.**
+**A lightweight, thread-safe, extensible, and decodable Snowflake ID generator for .NET.**
 
 ![NuGet](https://img.shields.io/nuget/v/Snowspeck.svg)
 ![License: MIT](https://img.shields.io/badge/license-MIT-yellow.svg)

@@ -8,7 +8,7 @@
         <PackageId>Snowspeck</PackageId>
         <PackageVersion>1.0.0</PackageVersion>
         <Authors>Tiago Ferreira Alves</Authors>
-        <Description>A lightweight, thread-safe and decodable Snowflake ID generator for .NET</Description>
+        <Description>A lightweight, thread-safe, extensible, and decodable Snowflake ID generator for .NET</Description>
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/synpse/Snowspeck</RepositoryUrl>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
